@@ -6,6 +6,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\admin\ColorController;
 use App\Http\Controllers\admin\HeroController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\HomeController as ControllersHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
 Route::get('/login', [authController::class, 'index'])->name('login');
 Route::post('/login', [authController::class, 'request'])->name('login.post');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ControllersHomeController::class, 'index']);
