@@ -10,6 +10,7 @@ body {
   max-width: 1290px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 
   @media (max-width:1366px) {
     max-width: 1000px;
@@ -52,13 +53,10 @@ body {
   }
 
   @media (max-width:560px) {
-    padding: 10px 14px;
-  }
-
-  @media (max-width:560px) {
     padding: 6px 8px;
     font-size: 14px;
   }
+
 
   &:hover {
     background-color: $black;
@@ -114,5 +112,76 @@ body {
     }
   }
 
-  svg {}
+}
+
+.jost {
+  font-family: 'Jost';
+  font-weight: $fw-medium;
+}
+
+
+.title {
+  font-size: 60px;
+  line-height: 68px;
+  font-family: 'Jost';
+  font-weight: $fw-medium;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-right: 60px;
+  position: relative;
+  display: inline-block;
+  margin-top: 130px;
+  margin-bottom: 70px;
+
+  &::after {
+    content: '';
+    left: 100%;
+    width: 126px;
+    height: 1px;
+    background-color: $black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width:1366px) {
+    margin-top: 40px;
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width:1024px) {
+    font-size: 40px;
+  }
+
+  @media (max-width:860px) {
+    font-size: 30px;
+    padding-right: 14px;
+
+    &::after {
+      width: 80px;
+    }
+  }
+
+  @media (max-width:560px) {
+    font-size: 24px;
+    padding-right: 20px;
+  }
+
+  @media (max-width:460px) {
+    padding-right: 0px !important;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+    font-size: 20px;
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+
 }

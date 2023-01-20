@@ -5,4 +5,5 @@
 @section('content')
   @include('components.header')
   @include('components.intro', ['intros'=>$data['intros']])
+  @include('components.philosophy')
 @endsection
