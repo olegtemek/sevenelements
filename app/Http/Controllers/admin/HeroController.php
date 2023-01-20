@@ -108,6 +108,7 @@ class HeroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Hero::destroy($id);
+        return redirect()->route('admin.hero.index')->with('message', 'Герой был удален');
     }
 }
