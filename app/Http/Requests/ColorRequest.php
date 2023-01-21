@@ -26,7 +26,6 @@ class ColorRequest extends FormRequest
         return [
             'code' => 'required',
             'title' => 'required',
-            'video' => 'required',
             'image1' => 'required',
             'image2' => 'required',
             'image3' => 'required',

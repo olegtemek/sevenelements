@@ -38,15 +38,30 @@ class ColorController extends Controller
      */
     public function store(ColorRequest $request)
     {
-        Color::create([
-            'code' => $request->code,
-            'title' => $request->title,
-            'image1' => $request->image1,
-            'image2' => $request->image2,
-            'image3' => $request->image3,
-            'image4' => $request->image4,
-            'video' => $request->video,
-        ]);
+        if ($request->main_image != null) {
+            Color::create([
+                'code' => $request->code,
+                'title' => $request->title,
+                'image1' => $request->image1,
+                'image2' => $request->image2,
+                'image3' => $request->image3,
+                'image4' => $request->image4,
+                'video' => $request->main_image,
+                'type' => false
+            ]);
+        } else {
+            Color::create([
+                'code' => $request->code,
+                'title' => $request->title,
+                'image1' => $request->image1,
+                'image2' => $request->image2,
+                'image3' => $request->image3,
+                'image4' => $request->image4,
+                'video' => $request->video,
+                'preview' => $request->preview,
+                'type' => true
+            ]);
+        }
 
         return redirect()->route('admin.color.index')->with('message', 'Цвет был успешно добавлен');
     }
@@ -83,15 +98,32 @@ class ColorController extends Controller
      */
     public function update(ColorRequest $request, $id)
     {
-        Color::find($id)->update([
-            'code' => $request->code,
-            'title' => $request->title,
-            'image1' => $request->image1,
-            'image2' => $request->image2,
-            'image3' => $request->image3,
-            'image4' => $request->image4,
-            'video' => $request->video,
-        ]);
+
+        if ($request->main_image != null) {
+            Color::find($id)->update([
+                'code' => $request->code,
+                'title' => $request->title,
+                'image1' => $request->image1,
+                'image2' => $request->image2,
+                'image3' => $request->image3,
+                'image4' => $request->image4,
+                'video' => $request->main_image,
+                'type' => false
+            ]);
+        } else {
+            Color::find($id)->update([
+                'code' => $request->code,
+                'title' => $request->title,
+                'image1' => $request->image1,
+                'image2' => $request->image2,
+                'image3' => $request->image3,
+                'image4' => $request->image4,
+                'video' => $request->video,
+                'preview' => $request->preview,
+                'type' => true
+            ]);
+        }
+
 
         return redirect()->route('admin.color.index')->with('message', 'Цвет был успешно изменен');
     }

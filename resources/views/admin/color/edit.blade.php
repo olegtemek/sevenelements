@@ -44,12 +44,44 @@
 
           <div class="col-sm-4">
             <div class="form-group">
+              @error('main_image')
+                <span class="error text-danger">{{ $message }}</span>
+              @enderror
+              <div class="row col-sm-12 input-group">
+                <label style="display: block; width:100%">Главное изображение</label>
+          
+                <input type="text" class="form-control" id="main_image" name="main_image" value="{{ $color->type == false ? $color->video : '' }}">
+                <div class="input-group-prepend">
+                  <a href="" class="popup_selector btn btn-success" data-inputid="main_image"><i class="fas fa-file"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="form-group">
               @error('video')
                 <span class="error text-danger">{{ $message }}</span>
               @enderror
               <div class="row col-sm-12 input-group">
-                <label style="display: block; width:100%">Видео</label>
-                <input type="text" class="form-control" id="video" name="video" value="{{ $color->video }}">
+                <label style="display: block; width:100%">Видео (оставить пустым если главное изображение вырбрано)</label>
+                <input type="text" class="form-control" id="video" name="video" value="{{ $color->type == true ? $color->video : '' }}">
+                <div class="input-group-prepend">
+                  <a href="" class="popup_selector btn btn-success" data-inputid="video"><i class="fas fa-file"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              @error('preview')
+                <span class="error text-danger">{{ $message }}</span>
+              @enderror
+              <div class="row col-sm-12 input-group">
+                <label style="display: block; width:100%">Превью для видео</label>
+                <input type="text" class="form-control" id="preview" name="preview" value="{{ $color->preview }}">
                 <div class="input-group-prepend">
                   <a href="" class="popup_selector btn btn-success" data-inputid="video"><i class="fas fa-file"></i></a>
                 </div>

@@ -6,4 +6,7 @@
   @include('components.header')
   @include('components.intro', ['intros'=>$data['intros']])
   @include('components.philosophy')
+  @include('components.color', ['colors'=>$data['colors']])
+  @include('components.best')
+  @include('components.footer')
 @endsection

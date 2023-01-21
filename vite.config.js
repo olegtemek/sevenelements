@@ -10,7 +10,7 @@ export default defineConfig({
             '@': path.resolve(__dirname, './resources/js'),
             '@style': path.resolve(__dirname, './resources/scss'),
             '@fonts': path.resolve(__dirname, './resources/fonts'),
-            '@assets': path.resolve(__dirname, './resources/assets'),
+            '@images': path.resolve(__dirname, './resources/images'),
         },
     },
     plugins: [

@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('image3');
             $table->string('image4');
             $table->string('video');
+            $table->boolean('type')->default(false);
+            $table->string('preview')->nullable();
             $table->timestamps();
         });
     }

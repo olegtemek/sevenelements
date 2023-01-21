@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Color;
 use App\Models\Intro;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class HomeController extends Controller
     {
         $data = [];
         $data['intros'] = Intro::orderBy('id', 'ASC')->get();
+        $data['colors'] = Color::orderBy('id', 'ASC')->get();
         return view('home.index', compact('data'));
     }
 
