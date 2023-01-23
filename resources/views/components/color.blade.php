@@ -1,4 +1,4 @@
-<section class="color">
+<section class="color" id="cases">
   <div class="container">
     <div class="color__title">
       <h2>цвет для каждой</h2>
@@ -18,16 +18,19 @@
         <div class="color__images">
           <div class="color__images-main">
             @if($colors[0]->type)
-            <a href="/{{$colors[0]->preview}}"
+            <a href="/{{$colors[0]->video}}"
               data-fancybox class="video">
-              <img src="/{{$colors[0]->video}}" alt="Video">
+              <img src="/{{$colors[0]->preview}}" alt="Video">
             </a>
-            @endif
-            
+
+            @else
             <a href="/{{$colors[0]->video}}"
               data-fancybox>
               <img src="/{{$colors[0]->video}}" alt="Video">
             </a>
+            @endif
+            
+            
           </div>
           <div class="color__images-grid">
             <a href="/{{$colors[0]->image1}}" data-fancybox><img src="/{{$colors[0]->image1}}" alt="Image 1"></a>
@@ -38,6 +41,10 @@
         </div>
         <span style="color:{{$colors[0]->code}};" class="jost">{{$colors[0]->title}}</span>
     </div>  
+
+    <div class="button">
+      <button class="btn form-default">Хочу такую</button>
+    </div>
   </div>
 </section>
 

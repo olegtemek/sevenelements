@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('title');
-            $table->foreignId('color_id')->references('id')->on('colors')->onDelete('cascade');
-            $table->longText('description');
-            $table->string('type'); // 0 - bag, 1 - case, 3 - accessories
+            $table->string('number')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('number_whatsapp')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
+
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('contacts');
     }
 };

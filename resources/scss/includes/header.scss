@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4;
 
   &__wrapper {
     display: flex;
@@ -145,7 +145,7 @@
     >button {
       @media (max-width:560px) {
         position: fixed;
-        top: 10px;
+        top: 6px;
         right: 10px;
       }
     }

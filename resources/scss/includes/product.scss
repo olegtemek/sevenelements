@@ -1,0 +1,164 @@
+.product {
+  .title {
+    @media (max-width:860px) {
+      margin-top: 40px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width:1024px) {
+      margin-top: -30px;
+    }
+
+    @media (max-width:1566px) {
+      width: 94%;
+    }
+
+    @media (max-width:1440px) {
+      width: 90%;
+    }
+
+    @media (max-width:1366px) {
+      width: 100%;
+    }
+
+    @media (max-width:1280px) {
+      width: 94%;
+    }
+
+    @media (max-width:1166px) {
+      width: 90%;
+    }
+
+    @media (max-width:760px) {
+      width: 75%;
+    }
+
+    @media (max-width:414px) {
+      width: 70%;
+    }
+
+    .swiper {
+      width: 100%;
+
+
+
+      // @media (max-width:3) {}
+
+
+      &-slide {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+          width: 290px;
+          height: 240px;
+          object-fit: cover;
+
+          @media (max-width:1366px) {
+            width: 240px;
+            height: 220px;
+          }
+
+          @media (max-width:1166px) {
+            width: 200px;
+            height: 190px;
+          }
+        }
+
+        p {
+          font-size: 20px;
+          padding-top: 20px;
+        }
+      }
+    }
+
+    .btn-next,
+    .btn-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media (max-width:1166px) {
+        top: 45%;
+      }
+    }
+
+    .btn-prev {
+      left: -120px;
+
+      @media (max-width:1566px) {
+        left: -80px;
+      }
+
+
+      @media (max-width:1366px) {
+        left: -120px;
+      }
+
+      @media (max-width:1280px) {
+        left: -80px;
+      }
+
+      @media (max-width:1166px) {
+        left: -70px;
+      }
+
+      @media (max-width:860px) {
+        left: -60px;
+      }
+
+
+      @media (max-width:580px) {
+        left: 0px;
+      }
+
+      @media (max-width:414px) {
+        left: -40px;
+      }
+    }
+
+    .btn-next {
+      right: -120px;
+      transform: translateY(-50%) rotate(180deg);
+
+      @media (max-width:1566px) {
+        right: -80px;
+      }
+
+
+
+      @media (max-width:1366px) {
+        right: -120px;
+      }
+
+      @media (max-width:1280px) {
+        right: -80px;
+      }
+
+      @media (max-width:1166px) {
+        right: -70px;
+      }
+
+      @media (max-width:860px) {
+        right: -60px;
+      }
+
+
+      @media (max-width:580px) {
+        right: 0px;
+      }
+
+      @media (max-width:414px) {
+        right: -40px;
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@
 
 
     @include('components.svg')
+    @include('components.modals')
     @yield('js')
 </body>
 </html>

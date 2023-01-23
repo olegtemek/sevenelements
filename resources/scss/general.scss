@@ -5,6 +5,9 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 .container {
   max-width: 1290px;
@@ -121,7 +124,7 @@ body {
 
 
 .title {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 68px;
   font-family: 'Jost';
   font-weight: $fw-medium;
@@ -183,5 +186,39 @@ body {
   }
 
 
+}
 
+.btn-next,
+.btn-prev {
+  height: 58px;
+  width: 58px;
+  cursor: pointer;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('@images/svg/arrow.svg') 100%/cover no-repeat;
+  }
+
+  &:hover {
+    &::after {
+      background-image: url('@images/svg/arrow-black.svg');
+    }
+  }
+
+
+  @media (max-width:760px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.btn-next {
+  transform: rotate(180deg);
 }

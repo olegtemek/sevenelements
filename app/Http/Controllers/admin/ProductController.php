@@ -45,6 +45,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'image' => $request->image,
             'description' => $request->description,
+            'type' => $request->type
         ]);
         return redirect()->route('admin.product.index')->with('message', 'Продукт был успешно добавлен');
     }
@@ -87,6 +88,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'image' => $request->image,
             'description' => $request->description,
+            'type' => $request->type
         ]);
         return redirect()->route('admin.product.index')->with('message', 'Продукт был успешно изменен');
     }

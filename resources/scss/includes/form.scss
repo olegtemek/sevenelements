@@ -1,0 +1,282 @@
+.form {
+  background-color: $lightBlue;
+  margin-top: 130px;
+  padding: 80px 0;
+
+  @media (max-width:860px) {
+    margin-top: 80px;
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width:860px) {
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 34px;
+
+      @media (max-width:680px) {
+        font-size: 16px;
+      }
+    }
+
+    h2 {
+      font-size: 60px;
+      line-height: 68px;
+      font-family: 'Jost';
+      font-weight: $fw-medium;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding-right: 60px;
+      position: relative;
+      display: inline-block;
+
+
+      &::after {
+        content: '';
+        left: 100%;
+        width: 126px;
+        height: 1px;
+        background-color: $black;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      @media (max-width:1366px) {
+        font-size: 40px;
+      }
+
+      @media (max-width:1024px) {
+        font-size: 40px;
+        padding-right: 40px;
+        padding-right: 0;
+
+        &::after {
+          display: none;
+
+        }
+      }
+
+      @media (max-width:860px) {
+        font-size: 30px;
+        padding-right: 14px;
+      }
+
+      @media (max-width:560px) {
+        font-size: 24px;
+        padding-right: 20px;
+      }
+
+      @media (max-width:460px) {
+        padding-right: 0px;
+        text-align: center;
+        display: block;
+        line-height: 40px;
+        font-size: 20px;
+
+        &::after {
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 60px;
+
+    @media (max-width:860px) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      justify-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    @media (max-width:414px) {
+      justify-items: center;
+    }
+
+
+    @media (max-width:680px) {
+      margin-top: 20px;
+    }
+
+    >button {
+      @media (max-width:860px) {
+        grid-column: span 12;
+      }
+    }
+
+    &-item {
+      width: 404px;
+      margin-right: 40px;
+
+      @media (max-width:1366px) {
+        width: 320px;
+      }
+
+      @media (max-width:1024px) {
+        width: 280px;
+        margin-right: 20px;
+      }
+
+      @media (max-width:860px) {
+        grid-column: span 6;
+        width: 100%;
+        margin-right: 0;
+      }
+
+      @media (max-width:414px) {
+        grid-column: span 12;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        padding: 14px 30px;
+        font-size: 18px;
+        line-height: 30px;
+
+        @media (max-width:1024px) {
+          font-size: 16px;
+          padding: 12px 14px;
+        }
+
+        @media (max-width:680px) {
+          padding: 12px 12px;
+        }
+
+        &::placeholder {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+
+    >span {
+      font-size: 14px;
+      color: red;
+      position: absolute;
+      top: -24px;
+      left: 0;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+
+    input {
+      padding: 0;
+      height: initial;
+      width: initial;
+      margin-bottom: 0;
+      display: none;
+      cursor: pointer;
+    }
+
+    label {
+      position: relative;
+      cursor: pointer;
+      line-height: 26px;
+
+      >a {
+        color: $gray;
+      }
+
+
+
+
+      &::before {
+        content: '';
+        transition: $tr;
+        -webkit-appearance: none;
+        background-color: transparent;
+        border: 1px solid $black;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        padding: 13px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: 20px;
+
+        @media (max-width:640px) {
+          padding: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      &.active {
+
+        &::before {
+          border: 1px solid red;
+        }
+      }
+
+      &:hover {
+        &::before {
+          border: 1px solid $gray;
+        }
+      }
+    }
+
+    input:checked+label:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 11px;
+      width: 6px;
+      height: 14px;
+      border: solid $white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+
+      @media (max-width:640px) {
+        height: 10px;
+        width: 4px;
+        top: 6px;
+        left: 8px;
+      }
+    }
+
+    input:checked+label:before {
+      background-color: $black;
+    }
+
+    input:checked+label:hover:before {
+      background-color: $gray;
+    }
+  }
+
+}

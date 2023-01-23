@@ -3,10 +3,13 @@
 @section('description', 'description')
 
 @section('content')
-  @include('components.header')
+  @include('components.header', ['contacts'=>$data['contacts']])
   @include('components.intro', ['intros'=>$data['intros']])
   @include('components.philosophy')
   @include('components.color', ['colors'=>$data['colors']])
   @include('components.best')
-  @include('components.footer')
+  @include('components.product', ['bags'=>$data['bags'],'cases'=>$data['cases'],'access'=>$data['access']])
+  @include('components.hero', ['heroes'=>$data['heroes']])
+  @include('components.form')
+  @include('components.footer', ['contacts'=>$data['contacts']])
 @endsection

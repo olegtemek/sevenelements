@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Http\Requests\DetailRequest;
+use App\Models\Detail;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class DetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::find(1);
-        return view('admin.home.index', compact('contacts'));
+        $details = Detail::all();
+        return view('admin.detail.index', compact('details'));
     }
 
     /**
@@ -26,7 +27,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.detail.create');
     }
 
     /**
@@ -35,9 +36,16 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DetailRequest $request)
     {
-        //
+        Detail::create([
+            'title' => $request->title,
+            'image' => $request->image,
+            'description' => $request->description,
+            'description1' => $request->description1,
+            'description2' => $request->description2,
+        ]);
+        return redirect()->route('admin.detail.index')->with('message', 'Деталь была добавлена');
     }
 
     /**
@@ -59,7 +67,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $detail = Detail::find($id);
+        return view('admin.detail.edit', compact('detail'));
     }
 
     /**
@@ -71,15 +80,14 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Contact::find(1)->update([
-            'number' => $request->number,
-            'number_whatsapp' => $request->number_whatsapp,
-            'facebook' => $request->facebook,
-            'instagram' => $request->instagram,
-            'address' => $request->address,
-            'email' => $request->email,
+        Detail::find($id)->update([
+            'title' => $request->title,
+            'image' => $request->image,
+            'description' => $request->description,
+            'description1' => $request->description1,
+            'description2' => $request->description2,
         ]);
-        return redirect()->route('admin.home.index')->with('message', 'Настройки были сохранены');
+        return redirect()->route('admin.detail.index')->with('message', 'Деталь была изменена');
     }
 
     /**
@@ -90,6 +98,7 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Detail::destroy($id);
+        return redirect()->route('admin.detail.index')->with('message', 'Деталь была удалена');
     }
 }

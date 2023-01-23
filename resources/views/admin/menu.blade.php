@@ -11,7 +11,12 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        
+        <li class="nav-item ">
+          <a href="{{route('admin.home.index')}}" class="nav-link {{(request()->is('admin')) ? 'active' : ''}}">
+            <i class="fas fa-cogs nav-icon"></i>
+            <p>Основные настройки</p>
+          </a>
+        </li>
        
         <li class="nav-item ">
           <a href="{{route('admin.intro.index')}}" class="nav-link {{(request()->is('admin/intro*')) ? 'active' : ''}}">
@@ -24,6 +29,13 @@
           <a href="{{route('admin.color.index')}}" class="nav-link {{(request()->is('admin/color*')) ? 'active' : ''}}">
             <i class="fas fa-cogs nav-icon"></i>
             <p>Цвета</p>
+          </a>
+        </li>
+
+        <li class="nav-item ">
+          <a href="{{route('admin.detail.index')}}" class="nav-link {{(request()->is('admin/detail*')) ? 'active' : ''}}">
+            <i class="fas fa-cogs nav-icon"></i>
+            <p>Главное в деталях</p>
           </a>
         </li>
         <li class="nav-item ">

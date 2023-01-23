@@ -16,8 +16,13 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+
         return [
-            //
+            'title' => 'Test Product' . fake()->numberBetween(0, 100),
+            'description' => 'description',
+            'image' => 'images/bags/1.png',
+            'type' => fake()->numberBetween(0, 2),
+            'color_id' => fake()->numberBetween(1, 2)
         ];
     }
 }

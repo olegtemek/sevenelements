@@ -32,7 +32,7 @@ class ColorFactory extends Factory
             'image3' => 'images/kakao/4.png',
             'image4' => 'images/kakao/5.png',
             'video' => 'images/kakao/1.png',
-            'type' => true,
+            'type' => false,
         ];
     }
 }

@@ -9,13 +9,13 @@
         </a>
 
         <div class="footer__column-icons">
-          <a href="#" class="svg insta"><svg class="icon">
+          <a href="{{$contacts->instagram}}" target="_blank" class="svg insta"><svg class="icon">
             <use xlink:href="#insta"></use>
           </svg></a>
-          <a href="#" class="svg face"><svg class="icon">
+          <a href="{{$contacts->facebook}}" target="_blank" class="svg face"><svg class="icon">
             <use xlink:href="#face"></use>
           </svg></a>
-          <a href="#" class="svg what"><svg class="icon">
+          <a href="https://wa.me/{{$contacts->number_whatsapp}}?text=Здравствуйте" target="_blank" class="svg what"><svg class="icon">
             <use xlink:href="#what"></use>
           </svg></a>
         </div>
@@ -23,24 +23,23 @@
       <div class="footer__column">
         <a href="#">Задать вопрос</a>
         <a href="#">Шоурум</a>
-        <a href="#">Кейсы</a>
+        <a href="#cases">Кейсы</a>
       </div>
       <div class="footer__column">
         <a href="#">Доставка</a>
-        <a href="#">Партнерам</a>
         <a href="#">Договор оферты</a>
       </div>
 
       <div class="footer__column">
-        <a href="#" class="link-svg"><svg class="icon">
+        <p class="link-svg"><svg class="icon">
           <use xlink:href="#map"></use>
-        </svg> Казахстан, г. Конаев</a>
-        <a href="#" class="link-svg"><svg class="icon">
+        </svg> {{$contacts->address}}</p>
+        <a href="tel:{{$contacts->number}}" class="link-svg"><svg class="icon">
           <use xlink:href="#call"></use>
-        </svg> + 7 777 271 53 13</a>
-        <a href="#" class="link-svg"><svg class="icon">
+        </svg>{{$contacts->number}}</a>
+        <a href="mailto:{{$contacts->email}}" class="link-svg"><svg class="icon">
           <use xlink:href="#mail"></use>
-        </svg> 7elementbags@gmail.com</a>
+        </svg>{{$contacts->email}}</a>
       </div>
     </div>
   </div>

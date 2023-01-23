@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-sm-12 row mb-4">
 
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="form-group">
               @error('image')
                 <span class="error text-danger">{{ $message }}</span>
@@ -30,7 +30,7 @@
             </div>
           </div>
 
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="form-group">
               @error('title')
                 <span class="error text-danger">{{ $message }}</span>
@@ -40,7 +40,7 @@
             </div>
           </div>
 
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="form-group">
               @error('color_id')
                 <span class="error text-danger">{{ $message }}</span>
@@ -50,6 +50,20 @@
                 @foreach ($colors as $color)
                     <option value="{{$color->id}}" style="color:{{$color->code}};">{{$color->title}}</option>
                 @endforeach
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              @error('type')
+                <span class="error text-danger">{{ $message }}</span>
+              @enderror
+              <label>Выберите тип</label>
+              <select name="type" id="" class="form-control">
+                <option value="0">Сумка</option>
+                <option value="1">Чехол</option>
+                <option value="2">Акссесуар</option>
               </select>
             </div>
           </div>
