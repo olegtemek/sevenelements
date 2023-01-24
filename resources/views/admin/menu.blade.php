@@ -52,6 +52,13 @@
           </a>
         </li>
         
+
+        <li class="nav-item ">
+          <a href="{{route('admin.insta.index')}}" class="nav-link {{(request()->is('admin/instagram*')) ? 'active' : ''}}">
+            <i class="fas fa-cogs nav-icon"></i>
+            <p>Для разработчиков</p>
+          </a>
+        </li>
       
       </ul>
     </nav>

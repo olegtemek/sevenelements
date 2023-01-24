@@ -2,7 +2,10 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox.css";
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 import axios from 'axios'
-
+import.meta.glob([
+  '../images/**',
+  '../fonts/**',
+]);
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -474,3 +477,19 @@ function openModalPopUp(btn) {
 document.getElementById('questionModal').addEventListener('click', () => {
   document.querySelector('.modal').classList.add('question')
 })
+
+
+
+if (document.querySelector('.instagram__photos')) {
+  let photos_block = document.querySelector('.instagram__photos')
+
+  window.addEventListener("load", async () => {
+    let res = await axios.get('/inst/insta-token-check/get')
+    if (res.data.status == 200) {
+
+      res.data.data.forEach(photo => {
+        photos_block.innerHTML = photos_block.innerHTML + `<a href="${photo.image_url}" target="_blank"><img src="${photo.image}" alt=""></a>`
+      });
+    }
+  });
+}
