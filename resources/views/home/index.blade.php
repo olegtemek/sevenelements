@@ -8,6 +8,7 @@
   @include('components.philosophy')
   @include('components.color', ['colors'=>$data['colors']])
   @include('components.best')
+  @include('components.detail', ['details'=>$data['details']])
   @include('components.product', ['bags'=>$data['bags'],'cases'=>$data['cases'],'access'=>$data['access']])
   @include('components.hero', ['heroes'=>$data['heroes']])
   @include('components.form')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\Color;
 use App\Models\Contact;
+use App\Models\Detail;
 use App\Models\Hero;
 use App\Models\Intro;
 use App\Models\Product;
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $data['access'] = Product::where('type', 2)->get();
         $data['heroes'] = Hero::with('color')->get();
         $data['contacts'] = Contact::find(1);
+        $data['details'] = Detail::all();
         return view('home.index', compact('data'));
     }
 
@@ -57,6 +59,7 @@ class HomeController extends Controller
             'name' => $name,
             'product' => $product,
             'pay' => $pay,
+            'comment' => $comment
         ];
 
         FacadesMail::to(env('ADMIN_EMAIL'))->send(new SendMail($mailData));

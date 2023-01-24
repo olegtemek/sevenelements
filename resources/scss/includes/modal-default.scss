@@ -178,7 +178,25 @@
       margin-top: 0;
     }
 
-    input {
+    &.comment {
+      display: none;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: none;
+
+      @media (max-width:860px) {
+        min-height: 100px;
+      }
+
+      @media (max-width:660px) {
+        min-height: 50px;
+      }
+    }
+
+    input,
+    textarea {
       padding: 14px 30px;
       font-size: 18px;
       line-height: 30px;
@@ -370,5 +388,16 @@
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+
+
+  &.question {
+    .modal__wrapper {
+      overflow-y: scroll;
+    }
+
+    .modal__item.comment {
+      display: block;
+    }
   }
 }

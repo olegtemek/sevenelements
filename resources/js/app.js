@@ -30,7 +30,7 @@ const swiper = new Swiper('.intro__slider', {
 
 });
 
-const heroSlider = new Swiper('.hero__slider-inner', {
+const detailSlider = new Swiper('.detail__slider-inner', {
   // configure Swiper to use modules
   modules: [Autoplay, Navigation],
   loop: true,
@@ -38,6 +38,27 @@ const heroSlider = new Swiper('.hero__slider-inner', {
   //   delay: 2500,
   //   disableOnInteraction: false,
   // },
+  spaceBetween: 0,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.detail__next',
+    prevEl: '.detail__prev'
+  },
+  autoHeight: true
+
+});
+
+
+
+
+const heroSlider = new Swiper('.hero__slider-inner', {
+  // configure Swiper to use modules
+  modules: [Autoplay, Navigation],
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   spaceBetween: 0,
   slidesPerView: "auto",
   breakpoints: {
@@ -272,6 +293,7 @@ function closeModalDefault(e) {
     document.removeEventListener('click', closeModalDefault)
     document.querySelector('.modal button').removeEventListener('click', sendModalDefault)
     document.querySelector('.modal').classList.remove('success')
+    document.querySelector('.modal').classList.remove('question')
   }
 }
 
@@ -283,7 +305,11 @@ async function sendModalDefault(e) {
     number: modal.querySelector('.number').value,
     title: modal.querySelector('input:first-child').value,
     checkbox: modal.querySelector('.checkbox input').checked,
+    comment: modal.querySelector('.modal__item.comment>textarea').value
   };
+
+
+  console.log(data);
 
   if (!data.checkbox) {
     return modal.querySelector('.error').classList.add('active')
@@ -408,4 +434,43 @@ document.querySelector('.form__wrapper').addEventListener('submit', async (e) =>
     return successSend()
   }
 
+})
+
+
+
+
+
+
+
+let btnsPopup = document.querySelectorAll('button')
+btnsPopup.forEach(btn => {
+  if (btn.dataset.modal == 'true') {
+    btn.addEventListener('click', () => (openModalPopUp(btn)))
+  }
+});
+
+
+
+function closeModalPop(e) {
+  if (e.target.classList[0] == 'modal-pop' || e.target.classList[0] == 'close' || e.target.classList[0] == 'modal__close') {
+    document.querySelector('.modal-pop').classList.remove('active')
+    document.removeEventListener('click', closeModalPop)
+  }
+}
+
+
+function openModalPopUp(btn) {
+  let modal = document.querySelector('.modal-pop');
+  modal.classList.add('active')
+  document.addEventListener('click', closeModalPop)
+
+  modal.querySelector('.modal__title').innerText = btn.dataset.title
+  modal.querySelector('.modal__description').innerHTML = btn.dataset.description
+  modal.querySelector('.modal__image').src = btn.dataset.image
+
+}
+
+
+document.getElementById('questionModal').addEventListener('click', () => {
+  document.querySelector('.modal').classList.add('question')
 })

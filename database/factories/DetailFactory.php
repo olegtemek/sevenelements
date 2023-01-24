@@ -21,16 +21,13 @@ class DetailFactory extends Factory
             'title' => 'test' . fake()->numberBetween(0, 3),
             'description' => '<h1>test</h1>
 
-            <p>testtest</p>',
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente ipsa saepe itaque iure harum velit perspiciatis soluta laborum, in provident at, minima placeat doloremque explicabo aperiam architecto, quo quaerat distinctio esse dolorem delectus repellat consequuntur quos. Dolorem, nostrum culpa?</p>',
             'description1' => '<h1>test</h1>
 
-            <p>testtest</p>',
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente ipsa saepe itaque iure harum velit perspiciatis soluta laborum</p>',
             'description2' => '<h1>test</h1>
 
-            <p>testtest</p>
-            <p>testtest</p>
-            <p>testtest</p>
-            <p>testtest</p>'
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente ipsa saepe itaque iure harum velit perspiciatis soluta laborum</p>'
         ];
     }
 }

@@ -11,6 +11,10 @@
       <input type="text" class="number" placeholder="Телефон" name="number" required>
     </div>
 
+    <div class="modal__item comment">
+      <textarea name="comment" placeholder="Вопрос"></textarea>
+    </div>
+
     <div class="checkbox">
       <span class="error">Это поле обязательно</span>
       <input type="checkbox" id="agree" checked>
@@ -88,4 +92,23 @@
 
     <button class="btn" type="submit">Отправить</button>
   </form>
+</div>
+
+
+
+
+
+
+
+<div class="modal-pop">
+  <div class="modal__wrapper-pop">
+    <div class="modal__close">
+      <span class="close">&#9587;</span>
+    </div>
+    <img src="" alt="" class="modal__image">
+    <h2 class="modal__title"></h2>
+    <div class="modal__description">
+      
+    </div>
+  </div>
 </div>

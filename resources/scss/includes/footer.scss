@@ -52,11 +52,15 @@
 
 
     >a,
-    p {
+    p,
+    button {
       font-size: 20px;
       line-height: 34px;
       margin-bottom: 10px;
       transition: $tr;
+      font-weight: $fw-light;
+      font-family: 'NotoSans';
+      text-align: left;
 
       @media (max-width:580px) {
         font-size: 16px;
