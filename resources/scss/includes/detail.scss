@@ -139,6 +139,7 @@
           >h3 {
             font-size: 32px;
             text-align: center;
+            text-transform: uppercase;
             padding-bottom: 10px;
 
             @media (max-width:1024px) {
@@ -177,6 +178,7 @@
 
             @media (max-width:1024px) {
               margin-bottom: 10px;
+              text-align: left;
             }
 
             @media (max-width:860px) {
@@ -221,6 +223,7 @@
 
             @media (max-width:1024px) {
               flex-direction: column;
+              text-align: left;
             }
           }
 
@@ -251,7 +254,6 @@
 
               @media (max-width:520px) {
                 font-size: 14px;
-
               }
             }
 

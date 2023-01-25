@@ -47,6 +47,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'type' => $request->type
         ]);
+
         return redirect()->route('admin.product.index')->with('message', 'Продукт был успешно добавлен');
     }
 

@@ -420,6 +420,7 @@ async function sendModalProduct(e, data) {
 document.querySelector('.form__wrapper').addEventListener('submit', async (e) => {
   e.preventDefault();
   let form = document.querySelector('.form__wrapper')
+
   form.querySelector('.error').classList.remove('active')
   let info = {
     number: form.querySelector('.number').value,
@@ -438,12 +439,6 @@ document.querySelector('.form__wrapper').addEventListener('submit', async (e) =>
   }
 
 })
-
-
-
-
-
-
 
 let btnsPopup = document.querySelectorAll('button')
 btnsPopup.forEach(btn => {
@@ -477,8 +472,6 @@ function openModalPopUp(btn) {
 document.getElementById('questionModal').addEventListener('click', () => {
   document.querySelector('.modal').classList.add('question')
 })
-
-
 
 if (document.querySelector('.instagram__photos')) {
   let photos_block = document.querySelector('.instagram__photos')
