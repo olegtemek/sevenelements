@@ -1,5 +1,7 @@
 <section class="product">
   <div class="container">
+
+    @if ($bags->count() != 0)
     <h2 class="title">Сумки</h2>
     <div class="product__slider">
       <div class="swiper product__slider-inner">
@@ -17,9 +19,11 @@
       <div class="product__slider-prev btn-prev"></div>
       <div class="product__slider-next btn-next"></div>
     </div>
+    @endif
 
     
 
+    @if ($cases->count() != 0)
     <h2 class="title">Чехлы</h2>
     <div class="product__slider">
       <div class="swiper product__slider-case-inner">
@@ -36,8 +40,11 @@
 
       <div class="product__slider-case-prev btn-prev"></div>
       <div class="product__slider-case-next btn-next"></div>
-    </div>
+    </div>    
+    @endif
 
+    
+    @if ($access->count() != 0)
     <h2 class="title">Аксессуары</h2>
     <div class="product__slider">
       <div class="swiper product__slider-access-inner">
@@ -55,5 +62,8 @@
       <div class="product__slider-access-prev btn-prev"></div>
       <div class="product__slider-access-next btn-next"></div>
     </div>
+    @endif
+
+    
   </div>
 </section>

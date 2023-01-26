@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
         ];
         DB::table('heroes')->insert($heroes);
 
-        Product::factory(100)->create();
+        // Product::factory(100)->create();
         Detail::factory(4)->create();
     }
 }

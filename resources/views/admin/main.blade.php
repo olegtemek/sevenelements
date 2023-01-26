@@ -69,7 +69,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>HitOil NetLight 2023 (OlegTemek)
+    <strong>SevenElements NetLight 2023 (OlegTemek)
   </footer>
 </div>
 <!-- ./wrapper -->
