@@ -17,7 +17,7 @@ const swiper = new Swiper('.intro__slider', {
   modules: [Autoplay],
   loop: true,
   autoplay: {
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: false,
   },
   spaceBetween: 20,

@@ -9,11 +9,11 @@
     height: 100%;
 
     &-outter {
-      height: 600px;
+      height: 640px;
       width: 100%;
 
       @media (max-width:1366px) {
-        height: 500px;
+        height: 560px;
       }
 
       @media (max-width:1024px) {
@@ -21,7 +21,7 @@
       }
 
       @media (max-width:860px) {
-        height: 300px;
+        height: 100%;
       }
     }
 
@@ -42,7 +42,7 @@
       }
 
       @media (max-width:1366px) {
-        width: 1100px !important;
+        width: 900px !important;
       }
 
       @media (max-width:1024px) {

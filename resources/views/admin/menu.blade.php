@@ -45,12 +45,12 @@
           </a>
         </li>
 
-        <li class="nav-item ">
+        {{-- <li class="nav-item ">
           <a href="{{route('admin.hero.index')}}" class="nav-link {{(request()->is('admin/hero*')) ? 'active' : ''}}">
             <i class="fas fa-cogs nav-icon"></i>
             <p>Наши герои</p>
           </a>
-        </li>
+        </li> --}}
         
 
         <li class="nav-item ">

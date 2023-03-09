@@ -40,9 +40,9 @@
         <a href="tel:{{$contacts->number}}" class="link-svg"><svg class="icon">
           <use xlink:href="#call"></use>
         </svg>{{$contacts->number}}</a>
-        <a href="mailto:{{$contacts->email}}" class="link-svg"><svg class="icon">
+        {{-- <a href="mailto:{{$contacts->email}}" class="link-svg"><svg class="icon">
           <use xlink:href="#mail"></use>
-        </svg>{{$contacts->email}}</a>
+        </svg>{{$contacts->email}}</a> --}}
       </div>
     </div>
   </div>
