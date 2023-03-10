@@ -32,12 +32,12 @@
           </a>
         </li>
 
-        <li class="nav-item ">
+        {{-- <li class="nav-item ">
           <a href="{{route('admin.detail.index')}}" class="nav-link {{(request()->is('admin/detail*')) ? 'active' : ''}}">
             <i class="fas fa-cogs nav-icon"></i>
             <p>Главное в деталях</p>
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item ">
           <a href="{{route('admin.product.index')}}" class="nav-link {{(request()->is('admin/product*')) ? 'active' : ''}}">
             <i class="fas fa-cogs nav-icon"></i>

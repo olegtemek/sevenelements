@@ -2,6 +2,18 @@
   <div class="container">
     <h2 class="title">все лучшее для лучших</h2>
     <div class="best__wrapper">
+       <div class="best__item">
+        <img src="{{ Vite::asset('resources/images/best5.png') }}">
+        <div class="best__item-text">
+          <h3 class="jost">вкладыш</h3>
+        </div>
+      </div>
+      <div class="best__item">
+        <img src="{{ Vite::asset('resources/images/best6.png') }}">
+        <div class="best__item-text">
+          <h3 class="jost">чехол <br>для ноутбука</h3>
+        </div>
+      </div>
       <div class="best__item">
         <img src="{{ Vite::asset('resources/images/best1.png') }}">
         <div class="best__item-text">
@@ -24,18 +36,6 @@
         <img src="{{ Vite::asset('resources/images/best4.png') }}">
         <div class="best__item-text">
           <h3 class="jost">заклепки</h3>
-        </div>
-      </div>
-      <div class="best__item">
-        <img src="{{ Vite::asset('resources/images/best5.png') }}">
-        <div class="best__item-text">
-          <h3 class="jost">вкладыш</h3>
-        </div>
-      </div>
-      <div class="best__item">
-        <img src="{{ Vite::asset('resources/images/best6.png') }}">
-        <div class="best__item-text">
-          <h3 class="jost">чехол <br>для ноутбука</h3>
         </div>
       </div>
     </div>
